@@ -16,10 +16,8 @@ categories = ["business", "sport", "technology", "culture", "lifeandstyle"]
 
 def fetch_guardian_articles(category):
     print(f"\nFetching Guardian articles for: {category}")
-    url = "https://content.guardianapis.com/search"
-    all_articles = []
 
-    # Fetch only from page 1
+    url = "https://content.guardianapis.com/search"
     page = 1
     params = {
         "api-key": guardian_key,
@@ -32,11 +30,14 @@ def fetch_guardian_articles(category):
         "order-by": "newest"
     }
 
+    all_articles = []
+
+
     response = requests.get(url, params=params)
 
     # Check if request is successful
     if response.status_code == 400:
-        print(f"⚠️ Bad request for category '{category}'. Response: {response.text}")
+        print(f"Bad request for category '{category}'. Response: {response.text}")
         return []
 
     # Raise for other status errors (e.g., 500, 503, etc.)
@@ -46,7 +47,7 @@ def fetch_guardian_articles(category):
     results = data.get("response", {}).get("results", [])
     
     if not results:
-        print(f"⚠️ No results for '{category}' on page {page}.")
+        print(f"No results for '{category}' on page {page}.")
     else:
         for article in results:
             all_articles.append({

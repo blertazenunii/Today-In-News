@@ -13,7 +13,9 @@ today_date = datetime.today().strftime('%Y-%m-%d')
 one_week_ago = (datetime.today() - timedelta(days=7)).strftime('%Y-%m-%d')
 
 def fetch_nyt_articles(query, total_pages=1, delay_seconds=2):
+
     print(f"Fetching NYT articles for: {query}")
+
     url = "https://api.nytimes.com/svc/search/v2/articlesearch.json"
     params = {
         "api-key": nyt_api_key,
@@ -22,14 +24,12 @@ def fetch_nyt_articles(query, total_pages=1, delay_seconds=2):
         "end_date": today_date.replace("-", ""),
         "page": 0,
     }
+
     all_articles = []
 
     for page in range(total_pages):
         params["page"] = page
         response = requests.get(url, params=params)
-
-       
-        
         response.raise_for_status()
         data = response.json()
         articles = data.get("response", {}).get("docs")
