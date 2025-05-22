@@ -1,9 +1,9 @@
 import csv
 import os
 from collections import defaultdict
-from newsapi_fetcher import fetch_newsapi_articles
-from nyt_fetcher import fetch_nyt_articles
-from guardian_fetcher import fetch_guardian_articles
+from fetchers.newsapi_fetcher import fetch_newsapi_articles
+from fetchers.nyt_fetcher import fetch_nyt_articles
+from fetchers.guardian_fetcher import fetch_guardian_articles
 
 def fetch_news():
     # Categories for NewsAPI, Guardian and NYT 
