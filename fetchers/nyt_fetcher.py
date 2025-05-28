@@ -10,7 +10,7 @@ nyt_api_key = os.getenv("NYTIMES_KEY")
 
 # Dates
 today_date = datetime.today().strftime('%Y-%m-%d')
-one_week_ago = (datetime.today() - timedelta(days=7)).strftime('%Y-%m-%d')
+one_week_ago = (datetime.today() - timedelta(days=3)).strftime('%Y-%m-%d')
 
 def fetch_nyt_articles(query, total_pages=1, delay_seconds=2):
 

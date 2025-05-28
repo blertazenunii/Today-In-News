@@ -9,7 +9,7 @@ newsapi_key = os.getenv("NEWSAPI_KEY")
 
 # Dates
 today_date = datetime.today().strftime('%Y-%m-%d')
-one_week_ago = (datetime.today() - timedelta(days=7)).strftime('%Y-%m-%d')
+one_week_ago = (datetime.today() - timedelta(days=3)).strftime('%Y-%m-%d')
 
 def fetch_newsapi_articles(category, total_pages=1):
     
