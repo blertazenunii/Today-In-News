@@ -9,7 +9,7 @@ guardian_key = os.getenv("GUARDIAN_KEY")
 
 # Dates
 today_date = datetime.today().strftime('%Y-%m-%d')
-one_week_ago = (datetime.today() - timedelta(days=7)).strftime('%Y-%m-%d')
+one_week_ago = (datetime.today() - timedelta(days=3)).strftime('%Y-%m-%d')
 
 # Categories
 categories = ["business", "sport", "technology", "culture", "lifeandstyle"]
