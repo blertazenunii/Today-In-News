@@ -52,7 +52,6 @@ for tab, category in zip(tabs, categories):
         else:
             for title, summary, url, published_at in rows:
                 st.markdown(f"### {title}")
-                st.markdown(f"**Published:** {published_at}")
                 st.markdown(summary)
                 st.markdown(f"[🔗 Read Full Article]({url})")
                 st.markdown("---")
